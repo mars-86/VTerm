@@ -5,6 +5,7 @@
 #include <cmath>
 #include <vector>
 #include "../internal/command.h"
+#include "../internal/vtopts.h"
 #include "../os/os.h"
 
 #ifdef _WIN32
@@ -15,16 +16,10 @@
 
 namespace vterm {
 
-typedef struct _VTopt {
-    std::string screen_buff;
-    std::string cursor_visibility;
-    std::string mode;
-} VTopt;
-
 class VTerm : public Command {
 public:
 	VTerm();
-    VTerm(VTopt options);
+    VTerm(VTopt opts);
 	virtual ~VTerm();
 	virtual void put(const char *s, int x, int y);
 	virtual void put(const char *s, int x, int y, int z);
@@ -42,9 +37,7 @@ protected:
 	} dwchar_t;
 
     std::vector<int> _buffer;
-
 private:
-    std::vector<int> _points_buffer;
 #ifdef _WIN32
     HANDLE _stdh;
 #else
@@ -52,7 +45,13 @@ private:
 #endif // _WIN32
     os::ContainerSize _cs;
     VTopt _options;
+
+    const int _OPT_SCREEN_BUFFER_MASK = 0x0003;
+    const int _OPT_CURSOR_BLI_MASK = 0x0030;
+    const int _OPT_CURSOR_VIS_MASK = 0x00C0;
+
     void _init_buffer(void);
+    void _set_options(VTopt opts);
     friend std::ostream& operator<<(std::ostream& out, const dwchar_t& symbol)
 	{
 		// std::flush for cursor fluency
