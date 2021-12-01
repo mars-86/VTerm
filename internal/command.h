@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "sequences.h"
+#include "colors.h"
 
 namespace vterm {
 
@@ -11,14 +12,14 @@ class Command {
 public:
 	Command() {}
 
-	~Command() {}
+	virtual ~Command() {}
 
-	virtual inline void set_cursor_visibility(const char *visibility)
+	inline void set_cursor_visibility(const char *visibility)
 	{
 		std::cout << visibility;
 	}
 
-	virtual inline void set_cursor_pos(const char pos, short n)
+	inline void set_cursor_pos(const char pos, short n)
 	{
 		switch (pos){
 		case 'U':
@@ -38,32 +39,57 @@ public:
 		}
 	}
 
-	virtual inline void set_cursor_pos(short x, short y)
+	inline void text_format(const std::string &fmt)
+	{
+        std::cout << VTERM_ESCAPE << "[" + fmt.substr(0, fmt.size() - 1) + "m";
+	}
+
+	inline void text_color(short r, short g, short b)
+	{
+        std::cout << VTERM_ESCAPE << "[38;2;" << r << ";" << g << ";" << b << "m";
+	}
+
+	inline void background_color(short r, short g, short b)
+	{
+        std::cout << VTERM_ESCAPE << "[48;2;" << r << ";" << g << ";" << b << "m";
+	}
+
+	inline void text_color(short number)
+	{
+        std::cout << VTERM_ESCAPE << "[38;5;" << number << "m";
+	}
+
+	inline void background_color(short number)
+	{
+        std::cout << VTERM_ESCAPE << "[48;5;" << number << "m";
+	}
+
+	inline void set_cursor_pos(short x, short y)
 	{
 		std::cout << VTERM_ESCAPE << "[" << y << ";" << x << "H";
 	}
 
-	virtual inline void set_cursor_pos(int x, int y)
+	inline void set_cursor_pos(int x, int y)
 	{
 		std::cout << VTERM_ESCAPE << "[" << y << ";" << x << "H";
 	}
 
-	virtual inline void set_screen_buffer(const char* s_buffer)
+	inline void set_screen_buffer(const char* s_buffer)
 	{
 		std::cout << s_buffer;
 	}
 
-	virtual inline void set_charset(const char* charset)
+	inline void set_charset(const char* charset)
 	{
 		std::cout << charset;
 	}
 
-	virtual inline void set_icon_title(const char* title)
+	inline void set_icon_title(const char* title)
 	{
 		std::cout << VTERM_ESCAPE << "]0;" << title << VTERM_BELL;
 	}
 
-	virtual inline void set_title(const char* title)
+	inline void set_title(const char* title)
 	{
 		std::cout << VTERM_ESCAPE << "]2;" << title << VTERM_BELL;
 	}
