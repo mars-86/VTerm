@@ -81,3 +81,91 @@
 1638228508 g:\programacion\cpp\github\vterm\vterm.h
 	"core/vterm.h"
 
+1638333400 source:/home/mariano/Documents/Programming/C++/VTerm/core/vterm.cpp
+	"vterm.h"
+
+1638326406 /home/mariano/Documents/Programming/C++/VTerm/core/vterm.h
+	<cmath>
+	<vector>
+	"../internal/command.h"
+	"../internal/vtopts.h"
+	"../os/os.h"
+
+1638333375 /home/mariano/Documents/Programming/C++/VTerm/internal/command.h
+	<iostream>
+	"sequences.h"
+	"colors.h"
+
+1638307847 /home/mariano/Documents/Programming/C++/VTerm/internal/sequences.h
+	<string>
+
+1638234056 /home/mariano/Documents/Programming/C++/VTerm/os/os.h
+	"linux/x11.h"
+	"linux/linux.h"
+	"win32/win32.h"
+
+1638234056 /home/mariano/Documents/Programming/C++/VTerm/os/linux/x11.h
+	<unistd.h>
+	"../base/platform.h"
+
+1638234056 /home/mariano/Documents/Programming/C++/VTerm/os/base/platform.h
+	"types.h"
+
+1638234056 /home/mariano/Documents/Programming/C++/VTerm/os/base/types.h
+	<stdint.h>
+
+1638234056 /home/mariano/Documents/Programming/C++/VTerm/os/linux/linux.h
+	<unistd.h>
+	<sys/ioctl.h>
+	"../base/platform.h"
+
+1638234056 /home/mariano/Documents/Programming/C++/VTerm/os/win32/win32.h
+	<windows.h>
+	"../base/platform.h"
+
+1638333427 source:/home/mariano/Documents/Programming/C++/VTerm/main.cpp
+	<iostream>
+	"vterm.h"
+
+1638234055 /home/mariano/Documents/Programming/C++/VTerm/vterm.h
+	"core/vterm.h"
+
+1638234056 source:/home/mariano/Documents/Programming/C++/VTerm/os/linux/linux.cpp
+	"linux.h"
+
+1638234056 source:/home/mariano/Documents/Programming/C++/VTerm/os/linux/x11.c
+	"x11.h"
+	<stdio.h>
+	<linux/kd.h>
+	<termios.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<poll.h>
+	<X11/Xlib.h>
+	<stdlib.h>
+	<sys/time.h>
+	<sys/types.h>
+	<unistd.h>
+
+1638234056 source:/home/mariano/Documents/Programming/C++/VTerm/os/linux/x11.cpp
+	"x11.h"
+	<stdio.h>
+	<linux/kd.h>
+	<termios.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<stdlib.h>
+	<sys/time.h>
+	<sys/types.h>
+
+1638234056 source:/home/mariano/Documents/Programming/C++/VTerm/os/win32/win32.cpp
+	"win32.h"
+	<stdio.h>
+	<stdio.h>
+
+1638330982 /home/mariano/Documents/Programming/C++/VTerm/internal/colors.h
+
+1638302403 /home/mariano/Documents/Programming/C++/VTerm/internal/vtopts.h
+

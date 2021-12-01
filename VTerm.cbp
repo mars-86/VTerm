@@ -32,7 +32,26 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="core/vterm.cpp" />
+		<Unit filename="core/vterm.h" />
+		<Unit filename="internal/colors.h" />
+		<Unit filename="internal/command.h" />
+		<Unit filename="internal/sequences.h" />
+		<Unit filename="internal/vtopts.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="os/base/platform.h" />
+		<Unit filename="os/base/types.h" />
+		<Unit filename="os/linux/linux.cpp" />
+		<Unit filename="os/linux/linux.h" />
+		<Unit filename="os/linux/x11.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="os/linux/x11.cpp" />
+		<Unit filename="os/linux/x11.h" />
+		<Unit filename="os/os.h" />
+		<Unit filename="os/win32/win32.cpp" />
+		<Unit filename="os/win32/win32.h" />
+		<Unit filename="vterm.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
